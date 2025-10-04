@@ -1,0 +1,10 @@
+.body {
+  background-color: #ffffff;
+  color: #111827; 
+  scroll-behavior: smooth;
+}
+
+.main {
+  min-height: 100vh; 
+  padding: 6rem 1rem; 
+}

@@ -1,0 +1,78 @@
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.desc {
+  margin-bottom: 2rem;
+}
+
+.subheading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #a3e635; /* lime-400 相当 */
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background 0.2s;
+}
+
+.card:hover {
+  background: #f7fee7; /* lime-50 相当 */
+}
+
+.thumb {
+  width: 100%;
+  overflow: hidden;
+}
+
+.thumbImg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.info {
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #65a30d; /* lime-600 相当 */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  border-radius: 4px;
+}
+
+.jenre {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #666;
+}

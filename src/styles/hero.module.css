@@ -1,0 +1,56 @@
+/* 全体のラップ */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg); /* 60-90px */
+}
+
+/* ヒーローセクション */
+.hero {
+  text-align: center;
+}
+
+.avatar {
+  display: block;
+  margin-inline: auto;
+  border-radius: 50%;
+}
+
+.title {
+  font-weight: bold;
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem); /* 20〜24px相当 */
+  margin-top: var(--space-xs); /* 20-30px */
+}
+
+/* 自己紹介セクション */
+.intro {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* リンクアイコンの並び */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+/* アイコンリンク */
+.iconLink {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  border: 1px solid #a3e635; /* lime-400 */
+  border-radius: 0.5rem;
+  font-size: 1.25rem; /* 20px */
+  color: inherit;
+  transition: background-color 0.2s;
+}
+
+.iconLink:hover {
+  background-color: #ecfccb; /* lime-100 */
+}

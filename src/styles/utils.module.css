@@ -1,0 +1,42 @@
+/* 両端揃え */
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 横並び（基本形） */
+.sideBySide {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .sideBySide {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* 横並び（中央揃え） */
+.sideBySideCenter {
+  display: flex;
+  flex-direction: row;     /* まず横並び */
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 500px) {
+  .sideBySideCenter {
+    flex-direction: column;
+    align-items: flex-end; /* 右寄せしたい場合 */
+    gap: 0.5rem;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .sideBySideCenter {
+    text-align: left;
+  }
+}

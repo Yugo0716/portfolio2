@@ -1,0 +1,116 @@
+'use client';
+
+import { useEffect, useRef, useState } from "react";
+import { Network } from "vis-network";
+import { DataSet } from "vis-data";
+import styles from "@/styles/myNetwork.module.css";
+import { nodesData, edgesData, NodeType, EdgeType } from "@/data/networkData";
+
+const MyNetwork = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [selectedNode, setSelectedNode] = useState<NodeType | null>(null);
+  const [popupPosition, setPopupPosition] = useState<{ x: number; y: number } | null>(null);
+
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const nodes = new DataSet<NodeType>(nodesData);
+    const edges = new DataSet<EdgeType>(edgesData);
+
+    const options = {
+      nodes: {
+        shape: "box",
+        font: { size: 20, color: "#111827" }, // globalsの前景色に合わせてOK
+        margin: { top: 10, bottom: 10, left: 10, right: 10 }
+      },
+      edges: {
+        color: { color: "#ccc", hover: "#fbb161", highlight: "#fbb161" },
+        width: 2,
+      },
+      interaction: { hover: true },
+      physics: {
+        solver: "forceAtlas2Based",
+        forceAtlas2Based: { gravitationalConstant: -160, springLength: 220 },
+        stabilization: true
+      },
+      groups: {
+        desc: {
+          color: {
+            background: "#d9f99d",
+            border: "#65a30d",
+            highlight: { background: "#84cc16", border: "#365314" },
+            hover: { background: "#bef264", border: "#65a30d" }
+          }
+        },
+        nonDesc: {
+          color: {
+            background: "#dcdcdc",
+            border: "#aaa",
+            highlight: { background: "#dcdcdc", border: "#aaa" },
+            hover: { background: "#dcdcdc", border: "#aaa" }
+          }
+        }
+      }
+    } as const;
+
+    const network = new Network(ref.current, { nodes, edges }, options);
+
+    // クリック
+    network.on("click", (params: any) => {
+      if (params.edges.length > 0) network.unselectAll();
+
+      const nodeId = params.nodes[0];
+      if (typeof nodeId === "number" || typeof nodeId === "string") {
+        const node = nodes.get(nodeId);
+        if (node && node.description) {
+          setSelectedNode(node);
+          setPopupPosition({ x: params.pointer.DOM.x, y: params.pointer.DOM.y });
+          return;
+        }
+      }
+      setSelectedNode(null);
+      setPopupPosition(null);
+    });
+
+    // ホバー: エッジのラベルサイズ調整
+    network.on("hoverNode", (params) => {
+      network.getConnectedEdges(params.node).forEach((edgeId) => {
+        edges.update({ id: edgeId, font: { size: 20 } });
+      });
+    });
+    network.on("hoverEdge", (params) => {
+      edges.update({ id: params.edge, font: { size: 20 } });
+    });
+    network.on("blurNode", (params) => {
+      network.getConnectedEdges(params.node).forEach((edgeId) => {
+        edges.update({ id: edgeId, font: { size: 0 } });
+      });
+    });
+    network.on("blurEdge", (params) => {
+      edges.update({ id: params.edge, font: { size: 0 } });
+    });
+
+    // クリーンアップ（メモリリーク防止）
+    return () => {
+      // @ts-ignore (vis-network は destroy を持つ)
+      network?.destroy?.();
+    };
+  }, []);
+
+  return (
+    <div className={styles.root}>
+      <div ref={ref} className={styles.canvas} />
+      {selectedNode && popupPosition && (
+        <div
+          className={styles.popup}
+          style={{ top: popupPosition.y + 10, left: popupPosition.x - 5 }}
+        >
+          <h2 className={styles.popupTitle}>{selectedNode.label}</h2>
+          <p>{selectedNode.description}</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default MyNetwork;
