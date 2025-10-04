@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from '@/styles/works.module.css';
 import { getWorks } from '@/libs/client';
 import { Works } from '@/libs/client';
+import GenreTags from './genreTags';
 
 export default async function WorksSection() {
   const data = await getWorks();
@@ -42,7 +43,7 @@ export default async function WorksSection() {
               )}
               {work.title}
             </h3>
-            <p className={styles.jenre}>{work.jenre}</p>
+            <GenreTags tags={work.genre} />
           </div>
         </Link>
       ))}

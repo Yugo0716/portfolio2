@@ -1,5 +1,4 @@
 import styles from "@/styles/about.module.css";
-import { HiOutlineExternalLink } from "react-icons/hi";
 import MyNetwork from "./myNetwork";
 
 export default function AboutSection(){
@@ -17,7 +16,7 @@ export default function AboutSection(){
                 
                     <li>2023年10月より東北大学 
                         <a href="https://www.icd.riec.tohoku.ac.jp/" target="_blank" rel="noopener noreferrer">
-                            インタラクティブコンテンツ研究室 <HiOutlineExternalLink/>
+                            インタラクティブコンテンツ研究室
                         </a>
                         に所属
                     </li>  
@@ -34,13 +33,13 @@ export default function AboutSection(){
                 <ul>
                     <li>学部1年～現在
                         <a href="https://micomprocedure.com/" target="_blank" rel="noopener noreferrer">
-                            東北大学マイコンプロシージャ（ゲーム制作サークル） <HiOutlineExternalLink/>
+                            東北大学マイコンプロシージャ（ゲーム制作サークル）
                         </a>
                         に所属
                     </li>
                     <li>学部1年～2年
                         <a href="https://tohokuaiki.jp/" target="_blank" rel="noopener noreferrer">
-                            東北大学学友会合気道部 <HiOutlineExternalLink/>
+                            東北大学学友会合気道部
                         </a>
                         に所属
                     </li>

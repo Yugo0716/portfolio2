@@ -7,4 +7,5 @@
 .main {
   min-height: 100vh; 
   padding: 6rem 1rem; 
+    max-width: 900px;
 }

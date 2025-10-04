@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  align-items: center; /* 縦方向中央揃え */
+  gap: 1rem; /* ロゴとタイトルの間隔 */
+  margin-bottom: 0rem; /* 下に少し余白 */
+}
+
+.header h2 {
+  font-size: 1.8rem;
+  margin: 0; /* 余計な余白をなくす */
+}

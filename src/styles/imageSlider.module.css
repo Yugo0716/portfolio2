@@ -1,0 +1,36 @@
+/* スライダー全体 */
+.container {
+  width: 90%;             /* 👈 少し小さめに表示 */
+  margin: 0 auto;
+}
+
+/* Splide 本体 */
+.splide {
+  width: 100%;
+}
+
+/* 各スライド */
+.slide {
+  display: flex;
+  justify-content: center;
+}
+
+/* 画像枠 */
+.imageWrapper {
+  position: relative;
+  width: 95%;
+  aspect-ratio: 16 / 9;     /* 比率維持 */
+  border-radius: 16px;     /* 👈 丸み */
+  overflow: hidden;        /* 丸みを反映するために必須 */
+  background: #111;
+}
+.image {
+  position: absolute;
+  inset: 0;        /* top/right/bottom/left: 0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* ← 16:9枠に合わせて切り取り */
+  object-position: center;/* 好みで調整可能 */
+}
+
+

@@ -13,13 +13,13 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "plugins": [{ "name": "next" }],
+    "baseUrl": ".",                                // ← 追加！
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@splidejs/react-splide": [
+        "./node_modules/@splidejs/react-splide/dist/types"   // ← 追加！
+      ]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
