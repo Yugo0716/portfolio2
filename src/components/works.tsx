@@ -9,11 +9,12 @@ export default async function WorksSection() {
   const works = data.contents;
 
   // isGame ごとに分ける
-  const games = works.filter((w: Works) => w.isGame === 'ゲーム');
-  const others = works.filter((w: Works) => w.isGame === 'その他の制作物');
+  const games  = works.filter((w: Works) => Array.isArray(w.isGame) && w.isGame.includes("ゲーム"));
+  const others = works.filter((w: Works) => Array.isArray(w.isGame) && w.isGame.includes("その他の制作物"));
+
 
   const renderWorks = (items: Works[]) => (
-    <div className={styles.grid}>
+    <div id="works" className={styles.grid}>
       {items.map((work) => (
         <Link key={work.id} href={`/works/${work.id}`} className={styles.card}>
           {/* サムネイル */}

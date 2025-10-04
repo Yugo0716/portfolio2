@@ -4,7 +4,7 @@ import MyNetwork from "./myNetwork";
 
 export default function AboutSection(){
     return(
-        <div>
+        <div id="about" className={styles.about}>
             <h2>About</h2>
             <div>
                 <h3>名前</h3>

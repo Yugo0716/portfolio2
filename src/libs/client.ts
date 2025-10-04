@@ -12,8 +12,8 @@ export type Works = {
   logo: MicroCMSImage;
   thumb: MicroCMSImage;
   images: MicroCMSImage[];
-  isGame: string; 
-  jenre: string; 
+  isGame: string[]; 
+  jenre: string[]; 
   content: string; 
 };
 
