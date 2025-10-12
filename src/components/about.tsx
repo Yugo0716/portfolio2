@@ -79,9 +79,9 @@ export default function AboutSection(){
                     →大学に入り、それまで全くの未経験だった合気道、エレキギターに挑戦しました。
                     <p></p>
                     <li>
-                        <strong>スイッチが入ればとことんやる継続力</strong>
+                        <strong>ユーザー視点での体験やフィードバックが豊富</strong>
                     </li>
-                    →一度取り掛かれば満足いくまでとにかく突き進みます。
+                    →作った作品のほとんどは学祭などで一般公開され、そのフィードバックを受けて修正する経験を積んできました。
                     <p></p>
                     <li>
                         <strong>体験のアイデアを生み出せるプログラマー</strong>
@@ -91,7 +91,7 @@ export default function AboutSection(){
             </div>
         </div>
         <div>
-                <h3>菊池勇吾を形成するネットワーク</h3>
+                <h3>私を形成するモノ</h3>
                 
                 <div className={styles.networkBox}>
                     <MyNetwork />

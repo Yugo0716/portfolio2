@@ -20,8 +20,8 @@ const MyNetwork = () => {
     const options = {
       nodes: {
         shape: "box",
-        font: { size: 20, color: "#111827" }, // globalsの前景色に合わせてOK
-        margin: { top: 10, bottom: 10, left: 10, right: 10 }
+        font: { size: 30, color: "#111827" }, // globalsの前景色に合わせてOK
+        margin: { top: 15, bottom: 15, left: 15, right: 15 }
       },
       edges: {
         color: { color: "#ccc", hover: "#fbb161", highlight: "#fbb161" },
@@ -30,7 +30,13 @@ const MyNetwork = () => {
       interaction: { hover: true },
       physics: {
         solver: "forceAtlas2Based",
-        forceAtlas2Based: { gravitationalConstant: -160, springLength: 1 },
+        forceAtlas2Based: {
+        gravitationalConstant: -300, // 反発を強める（絶対値↑でノードが離れる）
+        centralGravity: 0.01,        // 中央へ引き戻す力を弱める
+        springLength: 220,           // バネの自然長を長く（距離が伸びる）
+        springConstant: 0.02,        // バネを柔らかく（距離が伸びやすい）
+        avoidOverlap: 0.8,           // ノードの重なり回避（0〜1）
+      },
         stabilization: true
       },
       groups: {
@@ -65,7 +71,7 @@ const MyNetwork = () => {
     const FAR_ID = 18;
 
     network.once("afterDrawing", () => {
-      network.moveNode(FAR_ID, 2000, 0);
+      network.moveNode(FAR_ID, 3000, 2000);
       // DataSet 側にも固定プロパティを入れておく
       (nodes as any).update({
         id: FAR_ID,
@@ -94,11 +100,11 @@ const MyNetwork = () => {
     // ホバー: エッジのラベルサイズ調整
     network.on("hoverNode", (params) => {
       network.getConnectedEdges(params.node).forEach((edgeId) => {
-        edges.update({ id: edgeId, font: { size: 20 } });
+        edges.update({ id: edgeId, font: { size: 30 } });
       });
     });
     network.on("hoverEdge", (params) => {
-      edges.update({ id: params.edge, font: { size: 20 } });
+      edges.update({ id: params.edge, font: { size: 30 } });
     });
     network.on("blurNode", (params) => {
       network.getConnectedEdges(params.node).forEach((edgeId) => {
