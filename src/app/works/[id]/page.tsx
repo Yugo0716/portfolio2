@@ -13,12 +13,11 @@ export async function generateStaticParams() {
 export default async function WorkDetailPage({ params }: { params: { id: string } }) {
   const work = await getDetail(params.id);
 
-  // ページネーション用に全作品を取得（並び順は必要に応じて調整）
   const list = await getWorks();
-  const works = list.contents; // ← これを items に渡す
+  const works = list.contents; 
 
   return (
-    <main>
+    <div className={styles.worksDetail}>
         <Slider images={work.images.map((img: any) => img.url)} />
             <h3></h3>
         <div className={styles.header}>
@@ -30,7 +29,6 @@ export default async function WorkDetailPage({ params }: { params: { id: string 
         
         <GenreTags tags={work.genre} />      
 
-        {/* HTML形式で返るのでdangerouslySetInnerHTMLで描画 */}
         <div dangerouslySetInnerHTML={{ __html: work.content }} />
 
         <Pagination
@@ -40,7 +38,7 @@ export default async function WorkDetailPage({ params }: { params: { id: string 
         getTitle={(item: any) => item.title}
         pathPrefix="/works"
       />
-        </main>
+        </div>
 
         
     );

@@ -14,6 +14,7 @@ export type Works = {
   images: MicroCMSImage[];
   isGame: string[]; 
   genre: string[]; 
+  isPickUp: boolean;
   content: string; 
 };
 

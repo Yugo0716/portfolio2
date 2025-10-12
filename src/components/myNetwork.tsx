@@ -30,7 +30,7 @@ const MyNetwork = () => {
       interaction: { hover: true },
       physics: {
         solver: "forceAtlas2Based",
-        forceAtlas2Based: { gravitationalConstant: -160, springLength: 220 },
+        forceAtlas2Based: { gravitationalConstant: -160, springLength: 10 },
         stabilization: true
       },
       groups: {
@@ -49,11 +49,30 @@ const MyNetwork = () => {
             highlight: { background: "#dcdcdc", border: "#aaa" },
             hover: { background: "#dcdcdc", border: "#aaa" }
           }
+        },
+        secret: {
+          color: {
+            background: "#fed7aa", 
+            border: "#f97316",
+            highlight: { background: "#fdba74", border: "#c2410c" }, 
+            hover: { background: "#fdba74", border: "#c2410c"  }  
+          }
         }
       }
     } as const;
 
     const network = new Network(ref.current, { nodes, edges }, options);
+    const FAR_ID = 18;
+
+    network.once("afterDrawing", () => {
+      network.moveNode(FAR_ID, 2000, 0);
+      // DataSet 側にも固定プロパティを入れておく
+      (nodes as any).update({
+        id: FAR_ID,
+        fixed: { x: true, y: true },
+        physics: false
+      });
+    });
 
     // クリック
     network.on("click", (params: any) => {
@@ -106,7 +125,9 @@ const MyNetwork = () => {
           style={{ top: popupPosition.y + 10, left: popupPosition.x - 5 }}
         >
           <h2 className={styles.popupTitle}>{selectedNode.label}</h2>
-          <p>{selectedNode.description}</p>
+          <div
+  dangerouslySetInnerHTML={{ __html: selectedNode.description! }}
+/>
         </div>
       )}
     </div>

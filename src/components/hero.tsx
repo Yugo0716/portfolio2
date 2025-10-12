@@ -19,10 +19,6 @@ export default function Home() {
       </section>
 
       <section className={styles.intro}>
-        <p>はじめまして。菊池勇吾（きくちゆうご）と申します。現在修士1年生（27卒）です。</p>
-        <p>このページは私のポートフォリオサイトです。</p>
-        <p>私がこれまでに取り組んできたことを知ってもらうために作りました。</p>
-        <p>ゲームプランナー/ゲームエンジニア志望です。</p>
 
         <div className={styles.links}>
           <a
