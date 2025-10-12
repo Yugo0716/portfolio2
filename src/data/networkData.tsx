@@ -34,7 +34,7 @@ export const nodesData: NodeType[] = [
   { id: 16, label: "情報ネットワーク", description:"通信技術に興味があり、OSI参照モデルのそれぞれの階層の役割や通信パケットのしくみ、セキュリティについて勉強していました。", group: "desc"},
   { id: 17, label: "イベント運営", description: "サークルでは大学祭でのゲーム展示の運営の責任者として、会場設営や来場者への対応などを担当しました。また、研究室内での飲み会や芋煮会などのイベントの幹事として企画・進行をしました。",group: "desc"},
   { id: 18, label: "???",
-    description: '<a href="/works/haruasagashi" target="_blank" rel="noopener noreferrer">秘密のページ</a>',group: "secret"},
+    description: '<a href="/botsu" target="_self" rel="noopener noreferrer">秘密のページ</a>',group: "secret"},
 ];
 
 export const edgesData: EdgeType[] = [
