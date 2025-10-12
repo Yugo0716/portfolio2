@@ -30,7 +30,7 @@ const MyNetwork = () => {
       interaction: { hover: true },
       physics: {
         solver: "forceAtlas2Based",
-        forceAtlas2Based: { gravitationalConstant: -160, springLength: 10 },
+        forceAtlas2Based: { gravitationalConstant: -160, springLength: 1 },
         stabilization: true
       },
       groups: {
