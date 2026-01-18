@@ -22,14 +22,6 @@ export default function Home() {
 
         <div className={styles.links}>
           <a
-            href="https://x.com/kysan771166"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.iconLink}
-          >
-            <FaXTwitter />
-          </a>
-          <a
             href="https://github.com/Yugo0716"
             target="_blank"
             rel="noopener noreferrer"
