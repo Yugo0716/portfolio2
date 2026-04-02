@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import styles from "@/styles/layout.module.css";
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: "Yugo Kikuchi | Portfolio",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className={`${styles.main} container`}>{children}</main>
         <Footer />
+        <Analytics/>
       </body>
     </html>
   );
