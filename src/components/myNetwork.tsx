@@ -71,7 +71,7 @@ const MyNetwork = () => {
     const FAR_ID = 18;
 
     network.once("afterDrawing", () => {
-      network.moveNode(FAR_ID, 3000, 0);
+      network.moveNode(FAR_ID, 4000, 2000);
       // DataSet 側にも固定プロパティを入れておく
       (nodes as any).update({
         id: FAR_ID,
