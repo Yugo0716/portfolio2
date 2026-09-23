@@ -18,7 +18,7 @@ export default async function WorksSection() {
 
 
   const renderWorks = (items: Works[]) => (
-    <div id="works" className={styles.grid}>
+    <div className={styles.grid}>
       {items.map((work) => (
         <Link key={work.id} href={`/works/${work.id}`} className={styles.card}>
           {/* サムネイル */}
@@ -54,7 +54,7 @@ export default async function WorksSection() {
   );
 
   return (
-    <section className={styles.section}>
+    <section id="works" className={styles.section}>
       <h2 className={styles.heading}>Works</h2>
       <p className={styles.desc}>大学時代に私が制作に関わったコンテンツを掲載しています。</p>
 
