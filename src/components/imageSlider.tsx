@@ -24,7 +24,7 @@ export default function Slider({ images }: Props) {
           pagination: true,
           arrows: true,
           speed: 600,
-          drag: 'free',
+          drag: true,         // 1枚単位でスナップ（'free' だと途中で止まる）
           gap: '1rem',        // ← paddingよりgap推奨
         }}
       >
