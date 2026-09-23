@@ -34,3 +34,14 @@
 }
 
 
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    border-radius: 8px;
+  }
+}

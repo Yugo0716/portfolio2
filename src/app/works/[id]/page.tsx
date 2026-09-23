@@ -29,7 +29,7 @@ export default async function WorkDetailPage({ params }: { params: { id: string 
         
         <GenreTags tags={work.genre} />      
 
-        <div dangerouslySetInnerHTML={{ __html: work.content }} />
+        <div className={styles.content} dangerouslySetInnerHTML={{ __html: work.content }} />
 
         <Pagination
         items={works}

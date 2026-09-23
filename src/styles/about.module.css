@@ -14,3 +14,9 @@
 .about h2{
   text-align: center;
 }
+
+@media (max-width: 600px) {
+  .about {
+    padding-inline: 0;
+  }
+}

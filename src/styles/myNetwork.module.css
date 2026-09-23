@@ -28,3 +28,16 @@
 }
 
 
+
+@media (max-width: 600px) {
+  .canvas {
+    height: 26rem;
+  }
+
+  /* クリック位置ではなく横幅いっぱいに表示（画面外へのはみ出し防止） */
+  .popup {
+    left: 0 !important;
+    right: 0;
+    max-width: none;
+  }
+}

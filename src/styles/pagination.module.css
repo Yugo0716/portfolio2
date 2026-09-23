@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   margin-top: 2rem;
 }
 
@@ -12,6 +13,7 @@
   gap: 0.25rem;
   text-decoration: underline;
   transition: color 0.2s ease;
+  max-width: 48%;
 }
 
 .link:hover {
@@ -28,4 +30,5 @@
 
 .next {
   justify-content: flex-end;
+  text-align: right;
 }

@@ -9,3 +9,9 @@
   padding: 6rem 1rem; 
     max-width: 1000px;
 }
+
+@media (max-width: 600px) {
+  .main {
+    padding: 4.5rem 0.75rem;
+  }
+}

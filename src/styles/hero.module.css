@@ -14,6 +14,8 @@
   display: block;
   margin-inline: auto;
   border-radius: 50%;
+  width: min(300px, 70vw);
+  height: auto;
 }
 
 .title {

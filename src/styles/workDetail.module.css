@@ -15,3 +15,42 @@
   font-size: 1.8rem;
   margin: 0; /* 余計な余白をなくす */
 }
+
+@media (max-width: 600px) {
+  .worksDetail {
+    padding-inline: 0;
+  }
+}
+
+/* CMS本文: 画像・動画・長いURLがはみ出さないように */
+.content {
+  overflow-wrap: anywhere;
+}
+
+.content :global(img),
+.content :global(video),
+.content :global(iframe) {
+  max-width: 100%;
+}
+
+.content :global(img),
+.content :global(video) {
+  height: auto;
+}
+
+.content :global(iframe) {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+.content :global(table) {
+  display: block;
+  overflow-x: auto;
+}
+
+@media (max-width: 600px) {
+  .header h2 {
+    font-size: 1.4rem;
+  }
+}
