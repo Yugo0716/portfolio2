@@ -26,8 +26,24 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.iconLink}
+            aria-label="GitHub"
           >
             <FaGithub />
+          </a>
+          <a
+            href="https://atcoder.jp/users/Yugo0716"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.iconLink}
+            aria-label="AtCoder"
+          >
+            <Image
+              src="/atcoder.png"
+              alt=""
+              width={47}
+              height={40}
+              className={styles.logoImg}
+            />
           </a>
         </div>
       </section>

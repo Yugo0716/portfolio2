@@ -45,12 +45,20 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
+  /* 中身（アイコン/画像ロゴ）に関係なくボタンの大きさを揃える */
+  width: 7rem;
+  height: 3.5rem;
   border: 1px solid #a3e635; /* lime-400 */
   border-radius: 0.5rem;
   font-size: 1.25rem; /* 20px */
   color: inherit;
   transition: background-color 0.2s;
+}
+
+/* 画像ロゴ（AtCoder） */
+.logoImg {
+  height: 2.5rem;
+  width: auto;
 }
 
 .iconLink:hover {
